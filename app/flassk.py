@@ -1,6 +1,6 @@
 from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
-from main import get_data
+from app.main import get_data
 from twilio.rest import Client
 app = Flask(__name__)
 
@@ -38,7 +38,3 @@ def sms_reply():
     )
     resp = MessagingResponse()
     return str(resp)
-
-
-if __name__ == "__main__":
-    app.run(debug=True, port=8000)
