@@ -106,7 +106,7 @@ def get_data(keywords, limit: int):
     myntra_urls = [i.find('a').attrs['href'] for i in myntra_soup.find_all('li', {'class': 'product-base'})[:limit]]
     inn = 1
     for i in myntra_urls:
-        driver.get('https://www.myntra.com/' + i)
+        driver.get('https://www.nike.com/' + i)
         myntra_data.append(myntra_scrapper(i, driver))
         s2 += f'Product {inn} \n'
         s2 += 'URL ' + myntra_data[-1]['url'] + '\n Price ' + myntra_data[-1]['price'] + '\n Rating' + myntra_data[-1]['rating'] + '\n'
